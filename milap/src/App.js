@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'fontsource-roboto';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './Components/Home/Home.js';
+import Home from './Components/Home.js';
 import 'rsuite/dist/styles/rsuite-default.css';
 
 function App() {
