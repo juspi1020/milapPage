@@ -4,14 +4,16 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1
-    },   
+    },
     title: {
         display: 'fixed',
         [theme.breakpoints.up('sm')]: {
@@ -30,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
             display: 'none',
         },
     },
+    CustomButon: {
+        color: 'black',
+    },
+    CustomButonSize: {
+        color: 'black',
+        fontSize: '0.9em',
+    },
 }));
 
 export default function PrimarySearchAppBar() {
@@ -43,7 +52,14 @@ export default function PrimarySearchAppBar() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
-    
+
+    const history = useHistory();
+    const handleClickHome = () => history.push('/');
+    const handleClickUs = () => history.push('/nosotros');
+    const handleClickDate = () => history.push('/cita');
+    const handleClickGlasses = () => history.push('/gafas');
+    const handleClickLenses = () => history.push('/lentes');
+
     const mobileMenuId = 'primary-search-account-menu-mobile';
     const renderMobileMenu = (
         <Menu
@@ -56,40 +72,58 @@ export default function PrimarySearchAppBar() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <p>Sobre Nosotros</p>
+                <Button className={classes.CustomButon} onClick={handleClickUs}>
+                    Sobre Nosotros
+                </Button>
             </MenuItem>
             <MenuItem>
-                <p>Agenda Tu Cita</p>
+                <Button className={classes.CustomButon} onClick={handleClickDate}>
+                    Agenda Tu Cita
+                </Button>
             </MenuItem>
             <MenuItem>
-                <p>Cotiza Tus Gafas</p>
+                <Button className={classes.CustomButon} onClick={handleClickGlasses}>
+                    Cotiza Tus Gafas
+                </Button>
             </MenuItem>
             <MenuItem>
-                <p>Cotiza Tus Lentes</p>
+                <Button className={classes.CustomButon} onClick={handleClickLenses}>
+                    Cotiza Tus Lentes
+                </Button>
             </MenuItem>
         </Menu>
     );
 
     return (
         <div className={classes.grow}>
-            <AppBar position="absolute" color="unset">
+            <AppBar position="absolute" color="transparent">
                 <Toolbar>
                     <Typography className={classes.title} variant="h5" noWrap>
-                        Optica Milap
+                        <Button className={classes.CustomButonSize} onClick={handleClickHome}>
+                            Optica Milap
+                            </Button>
                     </Typography>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
                         <MenuItem>
-                            <p>Sobre Nosotros</p>
+                            <Button className={classes.CustomButon} onClick={handleClickUs}>
+                                Sobre Nosotros
+                            </Button>
                         </MenuItem>
                         <MenuItem>
-                            <p>Agenda Tu Cita</p>
+                            <Button className={classes.CustomButon} onClick={handleClickDate}>
+                                Agenda Tu Cita
+                            </Button>
                         </MenuItem>
                         <MenuItem>
-                            <p>Cotiza Tus Gafas</p>
+                            <Button className={classes.CustomButon} onClick={handleClickGlasses}>
+                                Cotiza Tus Gafas
+                            </Button>
                         </MenuItem>
                         <MenuItem>
-                            <p>Cotiza Tus Lentes</p>
+                            <Button className={classes.CustomButon} onClick={handleClickLenses}>
+                                Cotiza Tus Lentes
+                            </Button>
                         </MenuItem>
                     </div>
                     <div className={classes.sectionMobile}>
@@ -106,7 +140,7 @@ export default function PrimarySearchAppBar() {
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}
-         
+
         </div>
     );
 }

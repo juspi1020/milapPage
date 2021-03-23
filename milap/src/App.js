@@ -2,8 +2,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'fontsource-roboto';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Home from './Components/Home.js';
-import 'rsuite/dist/styles/rsuite-default.css';
+import Home from './Pages/Home.js';
+import Us from './Pages/Us.js';
+import Date from './Pages/Date.js';
+import Glasess from './Pages/Glasess.js';
+import Lenses from './Pages/Lenses.js';
 
 function App() {
   return (
@@ -12,6 +15,10 @@ function App() {
         <div className="App">
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/nosotros" exact component={Us} />
+            <Route path="/cita" exact component= {Date} />
+            <Route path="/gafas" exact component= {Glasess} />
+            <Route path="/lentes" exact component= {Lenses} />
           </Switch>
         </div>
       </Router>
