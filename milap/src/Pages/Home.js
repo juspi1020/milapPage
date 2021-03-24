@@ -2,7 +2,7 @@ import React from 'react';
 import PrimarySearchAppBar from '../Components/Navigator.js';
 import Carrusel from '../Components/Carousel.js';
 import NestedList from '../Components/List.js';
-import SimpleContainer from '../Components/oList.js';
+import SingleLineGridList from '../Components/oList.js';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -27,7 +27,7 @@ export default function Home() {
             <Carrusel />
             <p className={classes.oText}> LO MEJOR PARA TUS OJOS </p>
             <NestedList />
-            <SimpleContainer/>
+            <SingleLineGridList  />
         </div>
     )
 };

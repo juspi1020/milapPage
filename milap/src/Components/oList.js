@@ -1,32 +1,40 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import SimpleCard from './cards.js';
+import GridList from '@material-ui/core/GridList';
+import SimpleCard from '../Components/card.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     overflow: 'hidden',
-    padding: theme.spacing(0, 3),
+    margin: '1em',
+    backgroundColor: theme.palette.background.paper,
   },
-  paper: {
-    maxWidth: 400,
-    margin: `${theme.spacing(1)}px auto`,
-    padding: theme.spacing(2),
+  gridList: {
+    flexWrap: 'nowrap',
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: 'translateZ(0)',
   },
 }));
 
-const message = `Truncation should be conditionally applicable on this long line of text
- as this is a much longer line than what the container can support. `;
 
-export default function AutoGridNoWrap() {
+// The example data is structured as follows:
+
+
+const tileData = [1, 8, 8];
+
+export default function SingleLineGridList() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-            <SimpleCard/>
-   
+    <div>
+      <h3>TIPOS DE ROSTROS</h3>
+      <div className={classes.root}>
+        <GridList className={classes.gridList} cols={2.5}>
+          {tileData.map((tile) => (
+            <SimpleCard name={"cuadrado"} />
+          ))}
+        </GridList>
+      </div>
     </div>
   );
 }

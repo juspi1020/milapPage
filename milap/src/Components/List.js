@@ -31,15 +31,8 @@ export default function NestedList() {
     const classes = useStyles();
 
     return (
-        <List
-            aria-labelledby="nested-list-subheader"
-            subheader={
-                <ListSubheader   className={classes.color} component="div" id="nested-list-subheader">
-                    SERVICIOS
-                </ListSubheader>
-            }
-            className={classes.root}
-        >
+        <List aria-labelledby="nested-list-subheader" className={classes.root}>
+            <h3>SERVICIOS</h3>
             <ListItem button >
                 <ListItemText primary="Visiometria" />
             </ListItem>
