@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -22,9 +21,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize:'150%',
         display:'flex'
     }
-    // nested: {
-    //     paddingLeft: theme.spacing(4),
-    // },
 }));
 
 export default function NestedList() {
@@ -43,27 +39,6 @@ export default function NestedList() {
             <ListItem button>
                 <ListItemText primary="Adaptacion de lentes" />
             </ListItem>
-
-
-
-
-            {/* <ListItem button onClick={handleClick}>
-                <ListItemIcon>
-                    <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-                {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                    <ListItem button className={classes.nested}>
-                        <ListItemIcon>
-                            <StarBorder />
-                        </ListItemIcon>
-                        <ListItemText primary="Starred" />
-                    </ListItem>
-                </List>
-            </Collapse> */}
         </List>
     );
 }

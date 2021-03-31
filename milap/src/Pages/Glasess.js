@@ -1,5 +1,6 @@
 import React from 'react';
 import PrimarySearchAppBar from '../Components/Navigator.js';
+import FullWidthGrid from '../Components/blackComponent.js';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +21,7 @@ export default function Us() {
     return (
         <div>
             <PrimarySearchAppBar />           
+            <FullWidthGrid/>
         </div>
     )
 };

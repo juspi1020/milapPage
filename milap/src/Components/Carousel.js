@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'initial',
         width: '100%',
         ['@media (min-width:960px)']: {
+            paddingTop: '3em',
             width: '40%',
             position:'absolute'
         }
