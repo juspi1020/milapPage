@@ -18,13 +18,14 @@ const useStyles = makeStyles((theme) => ({
             padding: '25% 0% 0% 45%',
         }
     },
-    container:{
-        margin:'1em',
+    container: {
+        margin: '1em',
     },
 }));
 
 export default function Home() {
     const classes = useStyles();
+    const section = [{},{},{},{},{}];
     return (
         <div>
             <PrimarySearchAppBar />
@@ -32,13 +33,19 @@ export default function Home() {
             <div className={classes.container}>
                 <p className={classes.oText}>TUS OJOS, NUESTRO TESORO </p>
                 <NestedList />
-                <SingleLineGridList switchlist={'ROSTROS'} />
+                {section.map((sec) => (
+                    <SingleLineGridList />
+                ))}
+
+
+
+                {/* <SingleLineGridList switchlist={'ROSTROS'} />
                 <SingleLineGridList switchlist={'DIAGNOSTICOS'} />
                 <SingleLineGridList switchlist={'MONTURAS'} />
                 <SingleLineGridList switchlist={'LENTES'} />
-                <SingleLineGridList switchlist={'LENTES DE CONTACTO'} />                
+                <SingleLineGridList switchlist={'LENTES DE CONTACTO'} /> */}
             </div>
-            <FullWidthGrid/>
+            <FullWidthGrid />
         </div>
     )
 };

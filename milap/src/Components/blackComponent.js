@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthGrid() {
     const classes = useStyles();
-
+    
     return (
         <div className={classes.root}>
             <p>optica_milap@hotmail.com</p>
