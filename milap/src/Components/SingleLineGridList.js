@@ -1,7 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { formatMs, makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import SimpleCard from './SimpleCard.js';
+import { Select } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,102 +16,88 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const section = [
-  //ROSTROS   
-  ['CIRCULAR', 'TRIANGULAR', 'CUADRADO'],
-  //DIAGNOSTICOS   
-  ['MIOPIA', 'ASTIGMATISMO', 'HIPERMETROPIA', 'PRESVICIE'],
-  //MONTURAS   
-  ['PASTA', 'METALICA', 'ACETATO'],
-  //LENTES   
-  ['MONOFOCAL', 'BIFOCAL', 'PROGRESIVO'],
-  //LENTES DE CONTANCTO 
-  ['DIARIO', 'SEMANAL', 'MENSUAL']
-];
 
 
-export default function SingleLineGridList() {
+export default function SingleLineGridList(props) {
   const classes = useStyles();
-  const switchlist = section.map((sec) => sec);
-  
+  const sections= props;
+  //const s = section.map((sec)=> sec);
+  //const s = section.map((sec)=>(sec.map((a)=>a)));
+
 
   return (
     <div>
       {(() => {
-        console.log(switchlist);
-          for(i, switchlist.length,i++){
-            for(j, switchlist.length,j++){
-              
-            }
-          }
-        // switch (switchlist) {
-        //   case 'ROSTROS':
-        //     return (
-        //       // mapeo la lista hija
-        //       <div>
-        //         <h3>TIPOS DE {switchlist} </h3>
-        //         <div className={classes.root}>
-        //           <GridList className={classes.gridList} cols={2.5}>
-        //             {section.map((tile) => (
-        //               <SimpleCard name={switchlist} />
-        //             ))}
-        //           </GridList>
-        //         </div></div>
-        //     )
-        //   case 'DIAGNOSTICOS':
-        //     return (
-        //       <div><h3> {switchlist} </h3>
-        //         <div className={classes.root}>
-        //           <GridList className={classes.gridList} cols={2.5}>
-        //             {section.map((tile) => (
-        //               <SimpleCard name={switchlist} />
-        //             ))}
-        //           </GridList>
-        //         </div></div>
-        //     )
-        //   case 'MONTURAS':
-        //     return (
-        //       <div><h3>TIPOS DE {switchlist}</h3>
-        //         <div className={classes.root}>
-        //           <GridList className={classes.gridList} cols={2.5}>
-        //             {section.map((tile) => (
-        //               <SimpleCard name={switchlist} />
-        //             ))}
-        //           </GridList>
-        //         </div></div>
-        //     )
-        //   case 'LENTES':
-        //     return (
-        //       <div>
-        //         <h3>TIPOS DE {switchlist} </h3>
-        //         <div className={classes.root}>
-        //           <GridList className={classes.gridList} cols={2.5}>
-        //             {section.map((tile) => (
-        //               <SimpleCard name={switchlist} />
-        //             ))}
-        //           </GridList>
-        //         </div></div>
-        //     )
-        //   case 'LENTES DE CONTACTO':
-        //     return (
-        //       <div><h3>TIPOS DE {switchlist} </h3>
-        //         <div className={classes.root}>
-        //           <GridList className={classes.gridList} cols={2.5}>
-        //             {section.map((tile) => (
-        //               <SimpleCard name={switchlist} />
-        //             ))}
-        //           </GridList>
-        //         </div></div>
-        //     )
-        //   default:
-        //     return (
-        //       <div></div>
-        //     )
-        // }
-      }
-      )
-      ()
-      }
+        //sections.props.map(section=>(section))
+        
+          // switch (section) {
+          //   case 'h':
+          //     return (
+          //       // mapeo la sectiona hija
+          //       <div>
+          //         <h3>TIPOS DE {section} </h3>
+          //         <div className={classes.root}>
+          //           <GridList className={classes.gridList} cols={2.5}>
+          //             {section.map((tile) => (
+          //               <SimpleCard name={'a'} />
+          //             ))}
+          //           </GridList>
+          //         </div></div>
+          //    )
+          //   case 'DIAGNOSTICOS':
+          //     return (
+          //       <div><h3> {section} </h3>
+          //         <div className={classes.root}>
+          //           <GridList className={classes.gridList} cols={2.5}>
+          //             {section.map((tile) => (
+          //               <SimpleCard name={section} />
+          //             ))}
+          //           </GridList>
+          //         </div></div>
+          //     )
+          //   case 'MONTURAS':
+          //     return (
+          //       <div><h3>TIPOS DE {section}</h3>
+          //         <div className={classes.root}>
+          //           <GridList className={classes.gridList} cols={2.5}>
+          //             {section.map((tile) => (
+          //               <SimpleCard name={section} />
+          //             ))}
+          //           </GridList>
+          //         </div></div>
+          //     )
+          //   case 'LENTES':
+          //     return (
+          //      <div>
+          //         <h3>TIPOS DE {section} </h3>
+          //         <div className={classes.root}>
+          //           <GridList className={classes.gridList} cols={2.5}>
+          //             {section.map((tile) => (
+          //               <SimpleCard name={section} />
+          //             ))}
+          //           </GridList>
+          //         </div></div>
+          //     )
+          //   case 'LENTES DE CONTACTO':
+          //     return (
+          //       <div><h3>TIPOS DE {section} </h3>
+          //         <div className={classes.root}>
+          //           <GridList className={classes.gridList} cols={2.5}>
+          //             {section.map((tile) => (
+          //               <SimpleCard name={section} />
+          //             ))}
+          //           </GridList>
+          //         </div></div>
+          //     )
+          //   default:
+          //     return (
+          //       <div>
+
+          //       </div>
+          //     )
+          // }
+        }
+      )()}
     </div>
   );
 }

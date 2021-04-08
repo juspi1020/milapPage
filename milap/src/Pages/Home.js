@@ -25,7 +25,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
     const classes = useStyles();
-    const section = [{},{},{},{},{}];
+    const section = [
+        //ROSTROS   
+        ['CIRCULAR', 'TRIANGULAR', 'CUADRADO'],
+        //DIAGNOSTICOS   
+        ['MIOPIA', 'ASTIGMATISMO', 'HIPERMETROPIA', 'PRESVICIE'],
+        //MONTURAS   
+        ['PASTA', 'METALICA', 'ACETATO'],
+        //LENTES   
+        ['MONOFOCAL', 'BIFOCAL', 'PROGRESIVO'],
+        //LENTES DE CONTANCTO 
+        ['DIARIO', 'SEMANAL', 'MENSUAL']
+    ];
     return (
         <div>
             <PrimarySearchAppBar />
@@ -34,10 +45,8 @@ export default function Home() {
                 <p className={classes.oText}>TUS OJOS, NUESTRO TESORO </p>
                 <NestedList />
                 {section.map((sec) => (
-                    <SingleLineGridList />
+                    <SingleLineGridList sections={section} />
                 ))}
-
-
 
                 {/* <SingleLineGridList switchlist={'ROSTROS'} />
                 <SingleLineGridList switchlist={'DIAGNOSTICOS'} />
