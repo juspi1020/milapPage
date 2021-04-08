@@ -4,9 +4,9 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import ROSTROS from '../Images/rostro_circular.svg';
-import cuadrado from '../Images/rostro_cuadrado.svg';
-import triangular from '../Images/rostro_triangular.svg';
+// import ROSTROS from '../Images/rostro_circular.svg';
+// import cuadrado from '../Images/rostro_cuadrado.svg';
+// import triangular from '../Images/rostro_triangular.svg';
 
 const useStyles = makeStyles({
     root: {

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
     const classes = useStyles();
-    const section = [
+    const sections = [
         //ROSTROS   
         ['CIRCULAR', 'TRIANGULAR', 'CUADRADO'],
         //DIAGNOSTICOS   
@@ -44,8 +44,8 @@ export default function Home() {
             <div className={classes.container}>
                 <p className={classes.oText}>TUS OJOS, NUESTRO TESORO </p>
                 <NestedList />
-                {section.map((sec) => (
-                    <SingleLineGridList sections={section} />
+                {sections.map((sec) => (
+                    <SingleLineGridList sections={sections} />
                 ))}
 
                 {/* <SingleLineGridList switchlist={'ROSTROS'} />
