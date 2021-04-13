@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
         margin:'2em 0% 0% 0%'
     },
    
+   
 }));
 
 export default function Us() {
@@ -34,7 +35,7 @@ export default function Us() {
                 <MaterialUIPickers/>
                 <Button variant="outlined" className={classes.position} >AGENDAR</Button>
             </div>
-            <FullWidthGrid/>
+            <FullWidthGrid />
         </div>
     )
 };

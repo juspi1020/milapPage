@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        position: 'absolute',
+        position:'flexend',
+        bottom:'0',
         width:'100%',
-        margin:'8em 0% 0% 0%',
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',

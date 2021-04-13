@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       margin: theme.spacing(1),
       width: '100%',
+      ['@media (min-width:960px)']: {
+        width: '40%',
+    }
     },
   },
 }));

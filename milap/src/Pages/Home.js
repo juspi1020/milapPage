@@ -6,6 +6,7 @@ import SingleLineGridList from '../Components/SingleLineGridList.js';
 import FullWidthGrid from '../Components/blackComponent.js';
 import { makeStyles } from '@material-ui/core/styles';
 
+
 const useStyles = makeStyles((theme) => ({
     oText: {
         color: 'black',
@@ -21,22 +22,22 @@ const useStyles = makeStyles((theme) => ({
     container: {
         margin: '1em',
     },
+    footer: {
+        position: 'absolute',
+    }
+
 }));
 
 export default function Home() {
     const classes = useStyles();
     const sections = [
-        //ROSTROS   
-        ['CIRCULAR', 'TRIANGULAR', 'CUADRADO'],
-        //DIAGNOSTICOS   
-        ['MIOPIA', 'ASTIGMATISMO', 'HIPERMETROPIA', 'PRESVICIE'],
-        //MONTURAS   
-        ['PASTA', 'METALICA', 'ACETATO'],
-        //LENTES   
-        ['MONOFOCAL', 'BIFOCAL', 'PROGRESIVO'],
-        //LENTES DE CONTANCTO 
-        ['DIARIO', 'SEMANAL', 'MENSUAL']
+        { nombre: "ROSTROS", tipo: ["cuadrado", "triangular", "circular"] },
+        { nombre: "DIAGNOSTICOS", tipo: ["miopia", "astigmatismo", "hipermetropia", "presvicie"] },
+        { nombre: "MONTURAS", tipo: ["pasta", "metalica", "acetato"] },
+        { nombre: "LENTES", tipo: ["monofocal", "bifocal", "progresivo"] },
+        { nombre: "LENTES DE CONTACTO", tipo: ["diario", "semanal", "mensual"] },
     ];
+
     return (
         <div>
             <PrimarySearchAppBar />
@@ -44,17 +45,10 @@ export default function Home() {
             <div className={classes.container}>
                 <p className={classes.oText}>TUS OJOS, NUESTRO TESORO </p>
                 <NestedList />
-                {sections.map((sec) => (
-                    <SingleLineGridList sections={sections} />
-                ))}
-
-                {/* <SingleLineGridList switchlist={'ROSTROS'} />
-                <SingleLineGridList switchlist={'DIAGNOSTICOS'} />
-                <SingleLineGridList switchlist={'MONTURAS'} />
-                <SingleLineGridList switchlist={'LENTES'} />
-                <SingleLineGridList switchlist={'LENTES DE CONTACTO'} /> */}
+                <SingleLineGridList sections={sections} />
             </div>
-            <FullWidthGrid />
+            <FullWidthGrid className={classes.footer} />
+
         </div>
     )
 };

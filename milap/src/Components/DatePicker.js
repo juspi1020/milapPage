@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(-1),
         marginTop: theme.spacing(1),
         width: '120%',
+        ['@media (min-width:960px)']: {
+            width: '40%',
+        }
     },
 }));
 
