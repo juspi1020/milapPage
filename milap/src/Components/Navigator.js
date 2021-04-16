@@ -83,7 +83,7 @@ export default function PrimarySearchAppBar() {
             </MenuItem>
             <MenuItem>
                 <Button className={classes.CustomButon} onClick={handleClickGlasses}>
-                    Cotiza Tus Gafas
+                    Modelos de Gafas
                 </Button>
             </MenuItem>
             <MenuItem>
@@ -117,7 +117,7 @@ export default function PrimarySearchAppBar() {
                         </MenuItem>
                         <MenuItem>
                             <Button className={classes.CustomButon} onClick={handleClickGlasses}>
-                                Cotiza Tus Gafas
+                                Modelos de Gafas
                             </Button>
                         </MenuItem>
                         <MenuItem>

@@ -23,7 +23,6 @@ export default function SingleLineGridList(props) {
 
       {
         sections.map((sec, index) => {
-
           switch (sec.nombre) {
             case 'ROSTROS':
               return (
@@ -32,8 +31,7 @@ export default function SingleLineGridList(props) {
                   <div className={classes.root}>
                     <GridList className={classes.gridList} key={index} cols={2.5}>
                       {sec.tipo.map((types, index) => (
-                        console.log(types)
-                        //<SimpleCard name={types} key={index} />
+                       <SimpleCard name={types}/>
                       ))}
                     </GridList>
                   </div></div>
@@ -45,7 +43,7 @@ export default function SingleLineGridList(props) {
                   <div className={classes.root}>
                     <GridList className={classes.gridList} key={index} cols={2.5}>
                       {sec.tipo.map((types, index) => (
-                        < SimpleCard name={types} key={index} />
+                    <SimpleCard name={types}/>
                       ))}
                     </GridList>
                   </div></div>
@@ -57,7 +55,7 @@ export default function SingleLineGridList(props) {
                   <div className={classes.root}>
                     <GridList className={classes.gridList} key={index} cols={2.5}>
                       {sec.tipo.map((types, index) => (
-                        <SimpleCard name={types} key={index} />
+                     <SimpleCard name={types}/>
                       ))}
                     </GridList>
                   </div></div>
@@ -69,7 +67,7 @@ export default function SingleLineGridList(props) {
                   <div className={classes.root}>
                     <GridList className={classes.gridList} key={index} cols={2.5}>
                       {sec.tipo.map((types, index) => (
-                        <SimpleCard name={types} key={index} />
+                        <SimpleCard name={types}/>
                       ))}
                     </GridList>
                   </div>
@@ -81,8 +79,9 @@ export default function SingleLineGridList(props) {
                   <h3>TIPOS DE {sec.nombre} </h3>
                   <div className={classes.root}>
                     <GridList className={classes.gridList} key={index} cols={2.5}>
-                      {sec.tipo.map((types, index) => (
-                        <SimpleCard name={types} key={index} />
+                      {sec.tipo.map((types, ) => (
+                      
+                        <SimpleCard name={types}/>
                       ))}
                     </GridList>
                   </div></div>
@@ -92,7 +91,6 @@ export default function SingleLineGridList(props) {
                 <div>
                 </div>
               )
-
           }
         })
       }
@@ -102,20 +100,6 @@ export default function SingleLineGridList(props) {
   );
 }
 
-
-{/*
-        for (let i = 0; i < sections.length; i++) {
-
-          for (let j = 0; j < sections[i].tipo.length; j++) {
-            
-            const section = sections[i].nombre
-            const type = sections[i].tipo[j]
-            console.log(section)
-            console.log(type)
-            
-          }
-        }
-      */}
 
 
 

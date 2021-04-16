@@ -1,18 +1,16 @@
 import React from 'react';
 import PrimarySearchAppBar from '../Components/Navigator.js';
 import { makeStyles } from '@material-ui/core/styles';
-import FullWidthGrid from '../Components/blackComponent.js';
-// import facebook from '../Images/facebook.svg';
-// import instagram from '../Images/instagram.svg';
-// import whatsapp from '../Images/whatsapp.svg';
+
 
 const useStyles = makeStyles((theme) => ({
     title: {
         padding: '5em 0em 0em 1em'
     },
     content: {
-        textAlign:'justify',
+        textAlign: 'justify',
         padding: '1em 3em 0em 3em'
+
     },
     imgcontent: {
         display: 'flex',
@@ -22,10 +20,24 @@ const useStyles = makeStyles((theme) => ({
         padding: '1.3em',
         ['@media (min-width:960px)']: {
             padding: '2em',
-            
+
         },
     },
-    
+    covenants: {
+        display: 'flex',
+    },
+    large: {
+
+        minWidth: '3em',
+        minHeight: '3em',
+    },
+    position: {
+        margin: '2%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+
 }));
 
 export default function Us() {
@@ -42,20 +54,7 @@ export default function Us() {
                 <h3>VISION</h3>
                 <p>Ser la primera organizacion en la prestacion de servicios en salud visual integral, fundamentados en la idoineidad, el profesionalismo, el bienestar de lso pacientes, la eficiencia en los servicios, la innovacion del conocimiento cientifico y la formacion.</p>
             </div>
-                {/* <h3>NUESTRAS REDES</h3>
-            </div>
-            <div className={classes.imgcontent} >
-                <a className={classes.img} href='https://api.whatsapp.com/send?phone=573166085291'>
-                    <img className={classes.img} src={whatsapp} alt={whatsapp} />
-                </a>
-                <a className={classes.img} href='https://www.facebook.com/opticamilap2019'>
-                    <img className={classes.img} src={facebook} alt={facebook} />
-                </a>
-                <a className={classes.img} href='https://www.instagram.com/opticamilap/?hl=es'>
-                    <img className={classes.img} src={instagram} alt={instagram} />
-                </a>
-            </div> */}
-            <FullWidthGrid />
+           
         </div>
     )
 };

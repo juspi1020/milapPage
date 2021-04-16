@@ -17,9 +17,21 @@ const useStyles = makeStyles((theme) => ({
 export default function BasicTextFields(props) {
   const classes = useStyles();
   const {labelname}=props
+  const [value, setValue] = React.useState('');
+  console.log(value)
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="standard-basic" label= {labelname} />
+      <TextField id={labelname}
+       label= {labelname} 
+       value={value}
+       onChange={handleChange}
+       />
     </form>
   );
 }
+

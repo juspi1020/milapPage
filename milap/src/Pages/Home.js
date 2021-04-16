@@ -32,7 +32,7 @@ export default function Home() {
     const classes = useStyles();
     const sections = [
         { nombre: "ROSTROS", tipo: ["cuadrado", "triangular", "circular"] },
-        { nombre: "DIAGNOSTICOS", tipo: ["miopia", "astigmatismo", "hipermetropia", "presvicie"] },
+        { nombre: "DIAGNOSTICOS", tipo: ["miopia",  "hipermetropia", "astigmatismo","presbicia"] },
         { nombre: "MONTURAS", tipo: ["pasta", "metalica", "acetato"] },
         { nombre: "LENTES", tipo: ["monofocal", "bifocal", "progresivo"] },
         { nombre: "LENTES DE CONTACTO", tipo: ["diario", "semanal", "mensual"] },
