@@ -35,7 +35,6 @@ export default function Home() {
         { nombre: "DIAGNOSTICOS", tipo: ["miopia",  "hipermetropia", "astigmatismo","presbicia"] },
         { nombre: "MONTURAS", tipo: ["pasta", "metalica", "acetato"] },
         { nombre: "LENTES", tipo: ["monofocal", "bifocal", "progresivo"] },
-        { nombre: "LENTES DE CONTACTO", tipo: ["diario", "semanal", "mensual"] },
     ];
 
     return (

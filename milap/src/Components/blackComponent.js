@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        backgroundColor: 'black',
+        backgroundColor:'#000000' ,
         color: 'white',
         marginTop:'4em',
         padding: '1em',
@@ -22,9 +22,10 @@ export default function FullWidthGrid() {
     return (
         <div className={classes.root}>
             <p>optica_milap@hotmail.com</p>
-            <p>Cel: 316 6085291 - 314 8626164</p>
-            <p>Barrio Antonio Nariño - Popayan </p>
+            <p>Cel: 316 6085291</p>
             <p>Cra 10 # 17 N 45</p>
+            <p>Barrio Antonio Nariño - Popayan </p>
+            
         </div>
     );
 }

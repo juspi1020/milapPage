@@ -19,6 +19,7 @@ function App() {
             <Route path="/cita" exact component= {Date} />
             <Route path="/gafas" exact component= {Glasess} />
             <Route path="/lentes" exact component= {Lenses} />
+            
           </Switch>
         </div>
       </Router>
