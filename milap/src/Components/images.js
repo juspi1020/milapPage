@@ -11,7 +11,6 @@ import acetato from '../Images/acetato.svg';
 import monofocal from '../Images/monofocal.svg';
 import bifocal from '../Images/bifocal.svg';
 import progresivo from '../Images/progresivo.svg';
-
 const style={
     width:'8em',
 }

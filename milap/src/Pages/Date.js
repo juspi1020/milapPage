@@ -6,23 +6,18 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+import { useFormik } from 'formik';
 import MenuItem from '@material-ui/core/MenuItem';
+import Snackbar from '@material-ui/core/Snackbar';
 
 const useStyles = makeStyles((theme) => ({
-    textfield: {
-        padding: '5em 2em 0em 2em',
-        width: '100%',
-        ['@media (min-width:960px)']: {
-            width: '100%',
-        }
-    },
-    position: {
-        margin: '2em 0% 0% 0%'
-    },
+
     root: {
         '& > *': {
             margin: theme.spacing(1),
             width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
             ['@media (min-width:960px)']: {
                 width: '40%',
             }
@@ -35,68 +30,102 @@ const useStyles = makeStyles((theme) => ({
             width: '40%',
         }
     },
+    textfield: {
+        padding: '5em 2em 0em 2em',
+        width: '100%',
+        ['@media (min-width:960px)']: {
+            width: '100%',
+        }
+    },
+    button: {
+        position: 'absolute',
+        margin: '2em 0em 0em 0em',
+        maxWidth: '7em',
+    },
 
 }));
 
-const newDate = [];
-
-
 export default function Us() {
     const classes = useStyles();
+    const formik = useFormik({
+        initialValues: {
+            firstName: '',
+            lastName: '',
+            doc: '',
+            document: '',
+            phone: '',
+            date: '',
+        },
+        onSubmit: values => {
+            //alert(JSON.stringify(values, null, 2));
+        },
 
+    });
+    const [state, setState] = React.useState({
+        open: false,
+        errordoc: '',
+        errorphone:'',
+        vertical: 'top',
+        horizontal: 'center',
+        message:'Cita Agendada',
+    });
 
-    const [nombre, setName] = React.useState('');
-    const [apellidos, setLast] = React.useState('');
-    const [documento, setDoc] = React.useState('');
-    const [celular, setCel] = React.useState('');
-    const [tipodoc, setAge] = React.useState('');
-    const [open, setOpen] = React.useState(false);
-    const [date, setDate] = React.useState('');
-    const handleChangeName = (event) => { setName(event.target.value) };
-    const handleChangelast = (event) => { setLast(event.target.value) };
-    const handleChangeDoc = (event) => { setDoc(event.target.value) };
-    const handleChangeCel = (event) => { setCel(event.target.value) };
-    const handleChange = (event) => { setAge(event.target.value) };
-    const handleChangeDate = (event) => { setDate(event.target.value) }
-    const handleClose = () => { setOpen(false); };
-    const handleOpen = () => { setOpen(true); };
+    const { vertical, horizontal, open ,message, errordoc,errorphone} = state;
+
+    const validate = (newState) => () => {
+        if (!formik.values.firstName
+            || !formik.values.lastName
+            || !formik.values.doc
+            || !formik.values.document
+            || !formik.values.phone
+            || !formik.values.date) {
+            setState({ open: true, message:'Faltan campos por llenar', ...newState });
+        }else if(!/^[0-9]{4,12}$/i.test(formik.values.document)){
+            setState({ open: true,message:'Revisa este campo',errordoc:true, ...newState });
+        }else{if(!/^[0-9]{7,11}$/i.test(formik.values.phone)){
+            setState({ open: true,message:'Revisa este campo',errorphone:true, ...newState });
+        }else{
+            setState({ open: true,message:'Cita Agendada',...newState });
+        }
+    
+        }
+    };
+
+    const handleClose = () => {
+        setState({ ...state, open: false });
+    };
+
 
     return (
         <div >
             <PrimarySearchAppBar />
-
             <div className={classes.textfield} >
                 <h3>AGENDA TU CITA</h3>
-                <form className={classes.root} noValidate autoComplete="off">
-                    <FormControl>
-                        <TextField id={'nombre'}
-                            label={'NOMBRE'}
-                            value={nombre}
-                            onChange={handleChangeName}
-                            error={nombre === '' ? 'error' : false}
-                            helperText={nombre === '' ? 'Campo requerido!' : ' '}
-                        />
-                    </FormControl>
-                    <TextField id={'apellidos'}
-                        label={'APELLIDO'}
-                        value={apellidos}
-                        onChange={handleChangelast}
-                        error={apellidos === '' ? 'error' : false}
-                        helperText={apellidos === '' ? 'Campo requerido!' : ' '}
+                <form onSubmit={formik.handleSubmit} className={classes.root} noValidate autoComplete="off">
+                    <TextField
+                        id='name'
+                        label='NOMBRE'
+                        name="firstName"
+                        type="text"
+                        onChange={formik.handleChange}
+                        value={formik.values.firstName}
                     />
-
+                    <TextField
+                        id='lastname'
+                        label='APELLIDO'
+                        name="lastName"
+                        type="text"
+                        onChange={formik.handleChange}
+                        value={formik.values.lastName}
+                    />
                     <FormControl className={classes.formControl}>
-                        <InputLabel id="demo-controlled-open-select-label">TIPO DE DOCUMENTO</InputLabel>
+                        <InputLabel id="demo-simple-select-label">TIPO DE DOCUMENTO</InputLabel>
                         <Select
-                            labelId="demo-controlled-open-select-label"
-                            id="demo-controlled-open-select"
-                            open={open}
-                            onClose={handleClose}
-                            onOpen={handleOpen}
-                            value={tipodoc}
-                            onChange={handleChange}
-                            error={tipodoc === '' ? 'error' : false}
-                            helperText={tipodoc === '' ? 'Campo requerido!' : ' '}
+                            labelId="demo-simple-select-label"
+                            id="doc"
+                            name="doc"
+                            value={formik.values.doc}
+                            onChange={formik.handleChange}
                         >
                             <MenuItem value="">
                                 <em>Ninguno</em>
@@ -107,40 +136,47 @@ export default function Us() {
                             <MenuItem value={'CE'}>Cedula de Extangeria</MenuItem>
                         </Select>
                     </FormControl>
-                    <TextField id={'documento'}
-                        label={'NUMERO DE DOCUMENTO'}
-                        value={documento}
-                        onChange={handleChangeDoc}
-                        error={documento === '' ? 'error' : false}
-                        helperText={documento === '' ? 'Campo requerido!' : ' '}
+                    <TextField
+                        id="document"
+                        label='NUMERO DE DOCUMENTO'
+                        name="document"
+                        type="text"
+                        onChange={formik.handleChange}
+                        value={formik.values.document}
+                        error={errordoc}
                     />
 
-                    <TextField id={'celular'}
-                        label={'CELULAR'}
-                        value={celular}
-                        onChange={handleChangeCel}
-                        error={celular === '' ? 'error' : false}
-                        helperText={celular === '' ? 'Campo requerido!' : ' '}
+                    <TextField
+                        id="phone"
+                        label='CELULAR'
+                        name="phone"
+                        type="text"
+                        onChange={formik.handleChange}
+                        value={formik.values.phone}
+                        error={errorphone}
                     />
                     <TextField
-                        id="datetime"
+                        id="date"
                         label="FECHA Y HORA PARA LA CITA"
+                        value={formik.values.date}
+                        name={'date'}
                         type="datetime-local"
-                        defaultValue="2021-01-01T10:30"
                         className={classes.textField}
-                        value={date}
-                        onChange={handleChangeDate}
-                        error={date === '' ? 'error' : false}
-                        helperText={date === '' ? 'Campo requerido!' : ' '}
+                        onChange={formik.handleChange}
                         InputLabelProps={{
-                            shrink: true,
+                            shrink: true
                         }}
                     />
+                    <Button type="submit" variant="outlined" className={classes.button} onClick={validate({ vertical: 'bottom', horizontal: 'left' })} > AGENDAR </Button>
+                    <Snackbar
+                        anchorOrigin={{ vertical, horizontal }}
+                        open={open}
+                        onClose={handleClose}
+                        message={message}
+                        key={vertical + horizontal}
+                    />
                 </form>
-                <Button id="agendar" variant="outlined" className={classes.position} onClick={newDate}>AGENDAR</Button>
             </div>
-
         </div>
     )
 };
-

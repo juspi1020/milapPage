@@ -37,7 +37,6 @@ export default function RecipeReviewCard(props) {
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
-    {
       switch (tipo) {
         case 'cuadrado':
           
@@ -76,8 +75,8 @@ export default function RecipeReviewCard(props) {
         default:
           break;
       }
+
     };
-  };
 
   return (
     <Card className={classes.root}>
