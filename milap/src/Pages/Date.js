@@ -64,13 +64,13 @@ export default function Us() {
     const [state, setState] = React.useState({
         open: false,
         errordoc: '',
-        errorphone:'',
+        errorphone: '',
         vertical: 'top',
         horizontal: 'center',
-        message:'Cita Agendada',
+        message: 'Cita Agendada',
     });
 
-    const { vertical, horizontal, open ,message, errordoc,errorphone} = state;
+    const { vertical, horizontal, open, message, errordoc, errorphone } = state;
 
     const validate = (newState) => () => {
         if (!formik.values.firstName
@@ -79,15 +79,15 @@ export default function Us() {
             || !formik.values.document
             || !formik.values.phone
             || !formik.values.date) {
-            setState({ open: true, message:'Faltan campos por llenar', ...newState });
-        }else if(!/^[0-9]{4,12}$/i.test(formik.values.document)){
-            setState({ open: true,message:'Revisa este campo',errordoc:true, ...newState });
-        }else{if(!/^[0-9]{7,11}$/i.test(formik.values.phone)){
-            setState({ open: true,message:'Revisa este campo',errorphone:true, ...newState });
-        }else{
-            setState({ open: true,message:'Cita Agendada',...newState });
-        }
-    
+            setState({ open: true, message: 'Faltan campos por llenar', ...newState });
+        } else if (!/^[0-9]{4,12}$/i.test(formik.values.document)) {
+            setState({ open: true, message: 'Este campo solo acepta números', errordoc: true, ...newState });
+        } else {
+            if (!/^[0-9]{7,11}$/i.test(formik.values.phone)) {
+                setState({ open: true, message: 'Este campo solo acepta números', errorphone: true, ...newState });
+            } else {
+                setState({ open: true, message: 'Cita Agendada', ...newState });
+            }
         }
     };
 

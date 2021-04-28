@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import DescriptionCard from './DescriptionCard.js';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
@@ -34,49 +35,10 @@ export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const tipo = props.name;
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
-      switch (tipo) {
-        case 'cuadrado':
-          
-          return (
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography paragraph>Method:</Typography>
-              </CardContent>
-            </Collapse>
+  }
 
-          )
-
-        case 'triangular':
-          setExpanded(!expanded);
-          return (
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  triangular
-                </Typography>
-              </CardContent>
-            </Collapse>
-          )
-        case 'circular':
-          setExpanded(!expanded);
-          return (
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  circular
-                </Typography>
-              </CardContent>
-            </Collapse>
-          );
-
-        default:
-          break;
-      }
-
-    };
 
   return (
     <Card className={classes.root}>
@@ -98,7 +60,11 @@ export default function RecipeReviewCard(props) {
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>
-
+      <CardContent>
+        < Collapse in={expanded} timeout="auto" unmountOnExit >
+          <DescriptionCard tipo={tipo} />
+        </Collapse >
+      </CardContent>
     </Card>
   );
 }

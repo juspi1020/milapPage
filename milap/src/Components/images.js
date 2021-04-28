@@ -1,6 +1,6 @@
 import React from 'react';
-import circular from '../Images/circular.svg';
-import cuadrado from '../Images/cuadrado.svg';
+import circular from '../Images/ovalado.svg';
+import cuadrado from '../Images/rectangular.svg';
 import triangular from '../Images/triangular.svg';
 import miopia from '../Images/miopia.svg';
 import astigmatismo from '../Images/astigmatismo.svg';
@@ -23,8 +23,8 @@ const Images  = (props) => {
         <div>
           {(() => {
                 switch (tipo) {
-                    case "circular": return <img id="o-images" src={circular} alt={tipo} style={style}/>;
-                    case "cuadrado": return <img id="o-images" src={cuadrado} alt={tipo} style={style}/>;
+                    case "ovalado": return <img id="o-images" src={circular} alt={tipo} style={style}/>;
+                    case "rectangular": return <img id="o-images" src={cuadrado} alt={tipo} style={style}/>;
                     case "triangular": return <img id="o-images" src={triangular} alt={tipo} style={style} />;
                     case "miopia": return <img id="o-images" src={miopia} alt={tipo} style={style} />;
                     case "astigmatismo": return <img id="o-images" src={astigmatismo} alt={tipo} style={style} />;

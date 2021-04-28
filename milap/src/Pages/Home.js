@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
     const classes = useStyles();
     const sections = [
-        { nombre: "ROSTROS", tipo: ["cuadrado", "triangular", "circular"] },
+        { nombre: "ROSTROS", tipo: ["rectangular", "triangular", "ovalado"] },
         { nombre: "DIAGNOSTICOS", tipo: ["miopia",  "hipermetropia", "astigmatismo","presbicia"] },
         { nombre: "MONTURAS", tipo: ["pasta", "metalica", "acetato"] },
         { nombre: "LENTES", tipo: ["monofocal", "bifocal", "progresivo"] },
