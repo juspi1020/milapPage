@@ -1,5 +1,8 @@
 import React from 'react';
+import Listas from '../list.js'
 import PrimarySearchAppBar from '../Components/Navigator.js';
+import Button from '@material-ui/core/Button';
+
 // import { makeStyles } from '@material-ui/core/styles';
 
 // const useStyles = makeStyles((theme) => ({
@@ -15,12 +18,40 @@ import PrimarySearchAppBar from '../Components/Navigator.js';
 //     },
 // }));
 
+
+const style = {
+    margin: '5em 2em 0em 2em',
+    display: 'flex',
+}
+
+function setBrand() {
+
+}
 export default function Us() {
     //const classes = useStyles();
+
     return (
-        <div>
-            <PrimarySearchAppBar />           
-            
+        <div style={style}>
+            <PrimarySearchAppBar />
+            <div>
+                <h3>Marcas de Monturas</h3>
+                {Listas.map((montura) => (
+                    <Button ><img src={montura.img} alt={montura.img} onClick={setBrand} /></Button>
+                ))}
+                <table>
+                    <tr>
+                        {Listas.map((montura) => {
+                            montura.modelos.map((marcos) => {
+                                console.log(marcos.referencia)
+                                // <>
+                                //     <td>{marcos.referencia}</td>
+                                //     <td></td>
+                                // </>
+                            })
+                        })}
+                    </tr>
+                </table>
+            </div>
         </div>
     )
 };
