@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 275,
     alignItems: 'center',
     textAlign: 'center',
+    margin:'0.5em',
+    
   },
 
   expand: {
@@ -55,7 +57,7 @@ export default function RecipeReviewCard(props) {
           })}
           onClick={handleExpandClick}
           aria-expanded={expanded}
-          aria-label="show more"
+         
         >
           <ExpandMoreIcon />
         </IconButton>

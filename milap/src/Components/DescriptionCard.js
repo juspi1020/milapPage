@@ -86,21 +86,21 @@ const DescriptionCard = (props) => {
                     case "monofocal": return (
                         <CardContent style={style}>
                             <Typography>
-                                Set aside off of the heat to let rest for 10 minutes, and then serve.
+                                Este tipo de lente solo tiene un tipo de vision dependiendo de la formula del paciente
                         </Typography>
                         </CardContent>
                     )
                     case "bifocal": return (
                         <CardContent style={style}>
                             <Typography>
-                                Set aside off of the heat to let rest for 10 minutes, and then serve.
+                                Este tipo de lente tiene vision lejana por la parte superior y cercana por la parte baja del lente
                         </Typography>
                         </CardContent>
                     )
                     case "progresivo": return (
                         <CardContent style={style}>
                             <Typography>
-                                Set aside off of the heat to let rest for 10 minutes, and then serve.
+                                Este tipo de lente tiene vision lejana por la parte superior, vision media por la parte media del lente y cercana por la parte baja
                         </Typography >
                         </CardContent>
                     )

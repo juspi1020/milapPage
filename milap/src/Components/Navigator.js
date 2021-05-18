@@ -71,25 +71,19 @@ export default function PrimarySearchAppBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <Button className={classes.CustomButon} onClick={handleClickUs}>
+            <MenuItem onClick={handleClickUs}>
                     Sobre Nosotros
-                </Button>
             </MenuItem>
-            <MenuItem>
-                <Button className={classes.CustomButon} onClick={handleClickDate}>
+            <MenuItem onClick={handleClickDate}>
                     Agenda Tu Cita
-                </Button>
             </MenuItem>
-            <MenuItem>
-                <Button className={classes.CustomButon} onClick={handleClickGlasses}>
+            <MenuItem onClick={handleClickGlasses}>
                     Modelos de Gafas
-                </Button>
             </MenuItem>
-            <MenuItem>
-                <Button className={classes.CustomButon} onClick={handleClickLenses}>
+            <MenuItem onClick={handleClickLenses}>
+                
                     Cotiza Tus Lentes
-                </Button>
+                
             </MenuItem>
         </Menu>
     );
@@ -105,25 +99,25 @@ export default function PrimarySearchAppBar() {
                     </Typography>
                     <div className={classes.grow} />
                     <div className={classes.sectionDesktop}>
-                        <MenuItem>
-                            <Button className={classes.CustomButon} onClick={handleClickUs}>
+                        <MenuItem onClick={handleClickUs}>
+                            
                                 Sobre Nosotros
-                            </Button>
+                           
                         </MenuItem>
-                        <MenuItem>
-                            <Button className={classes.CustomButon} onClick={handleClickDate}>
+                        <MenuItem onClick={handleClickDate}>
+                            
                                 Agenda Tu Cita
-                            </Button>
+                           
                         </MenuItem>
-                        <MenuItem>
-                            <Button className={classes.CustomButon} onClick={handleClickGlasses}>
+                        <MenuItem onClick={handleClickGlasses}>
+                            
                                 Modelos de Gafas
-                            </Button>
+                           
                         </MenuItem>
-                        <MenuItem>
-                            <Button className={classes.CustomButon} onClick={handleClickLenses}>
+                        <MenuItem onClick={handleClickLenses}>
+                            
                                 Cotiza Tus Lentes
-                            </Button>
+                            
                         </MenuItem>
                     </div>
                     <div className={classes.sectionMobile}>
