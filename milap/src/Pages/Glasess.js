@@ -10,18 +10,22 @@ const style = {
 
 function setBrand() {
     return (
-        <table>
-            <tr>
-                {Listas.map((montura) => {
+        <div>
+            {
+                Listas.map((montura) => {
                     montura.modelos.map((marcos) => {
                         console.log(marcos.img)
-                       return(
-                           <img src={marcos.img} alt={marcos.img}/>
-                       )
+                        return (
+                            <table>
+                                <tr>
+                                    <img src={marcos.img} alt={marcos.img} />
+                                </tr>
+                            </table>
+                        )
                     })
-                })}
-            </tr>
-        </table>
+                })
+            }
+        </div>
     )
 }
 

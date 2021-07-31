@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '4em',
         position: 'initial',
         width: '100%',
-        ['@media (min-width:960px)']: {
+        [theme.breakpoints.up('md')]: {
             paddingTop: '3em',
             width: '40%',
             position:'absolute'

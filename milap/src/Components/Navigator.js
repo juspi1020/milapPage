@@ -57,7 +57,7 @@ export default function PrimarySearchAppBar() {
     const handleClickHome = () => history.push('/');
     const handleClickUs = () => history.push('/nosotros');
     const handleClickDate = () => history.push('/cita');
-    const handleClickGlasses = () => history.push('/gafas');
+    const handleClickGlasses = () => history.push('/prueba');
     const handleClickLenses = () => history.push('/lentes');
 
     const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -77,9 +77,9 @@ export default function PrimarySearchAppBar() {
             <MenuItem onClick={handleClickDate}>
                     Agenda Tu Cita
             </MenuItem>
-            <MenuItem onClick={handleClickGlasses}>
+            {/* <MenuItem onClick={handleClickGlasses}>
                     Modelos de Gafas
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem onClick={handleClickLenses}>
                 
                     Cotiza Tus Lentes
@@ -109,11 +109,11 @@ export default function PrimarySearchAppBar() {
                                 Agenda Tu Cita
                            
                         </MenuItem>
-                        <MenuItem onClick={handleClickGlasses}>
+                        {/* <MenuItem onClick={handleClickGlasses}>
                             
                                 Modelos de Gafas
                            
-                        </MenuItem>
+                        </MenuItem> */}
                         <MenuItem onClick={handleClickLenses}>
                             
                                 Cotiza Tus Lentes

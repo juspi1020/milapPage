@@ -65,7 +65,7 @@ const DescriptionCard = (props) => {
                     case "pasta": return (
                         <CardContent style={style}>
                             <Typography>
-                                Set aside off of the heat to let rest for 10 minutes, and then serve.
+                                Material poco pesado, sumergible en agua 
                         </Typography>
                         </CardContent>
                     )
