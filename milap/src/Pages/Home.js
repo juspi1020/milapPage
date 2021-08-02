@@ -5,8 +5,7 @@ import NestedList from '../Components/NestedList.js';
 import SingleLineGridList from '../Components/SingleLineGridList.js';
 import FullWidthGrid from '../Components/blackComponent.js';
 import { makeStyles } from '@material-ui/core/styles';
-
-
+import Date from './Date.js';
 const useStyles = makeStyles((theme) => ({
     oText: {
         color: 'black',
@@ -31,10 +30,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
     const classes = useStyles();
     const sections = [
-        { nombre: "ROSTROS", tipo: ["rectangular", "triangular", "ovalado"] },
-        { nombre: "DIAGNOSTICOS", tipo: ["miopia",  "hipermetropia", "astigmatismo","presbicia"] },
-        { nombre: "MONTURAS", tipo: ["pasta", "metalica", "acetato"] },
-        { nombre: "LENTES", tipo: ["monofocal", "bifocal", "progresivo"] },
+        { nombre: "ROSTROS", tipo: ["Rectangular", "Triangular", "Ovalado"] },
+        { nombre: "DIAGNOSTICOS", tipo: ["Miopia",  "Hipermetropia", "Astigmatismo","Presbicia"] },
+        { nombre: "MONTURAS", tipo: ["Pasta", "Metalica", "Acetato"] },
+        { nombre: "LENTES", tipo: ["Monofocal", "Bifocal", "Progresivo"] },
     ];
 
     return (
@@ -45,7 +44,9 @@ export default function Home() {
                 <p className={classes.oText}>TUS OJOS, NUESTRO TESORO </p>
                 <NestedList />
                 <SingleLineGridList sections={sections} />
+                <Date/>
             </div>
+
             <FullWidthGrid className={classes.footer} />
 
         </div>

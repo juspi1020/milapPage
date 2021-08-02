@@ -23,18 +23,18 @@ const Images  = (props) => {
         <div>
           {(() => {
                 switch (tipo) {
-                    case "ovalado": return <img id="o-images" src={circular} alt={tipo} style={style}/>;
-                    case "rectangular": return <img id="o-images" src={cuadrado} alt={tipo} style={style}/>;
-                    case "triangular": return <img id="o-images" src={triangular} alt={tipo} style={style} />;
-                    case "miopia": return <img id="o-images" src={miopia} alt={tipo} style={style} />;
-                    case "astigmatismo": return <img id="o-images" src={astigmatismo} alt={tipo} style={style} />;
-                    case "hipermetropia": return <img id="o-images" src={hipermetropia} alt={tipo} style={style} />;
-                    case "pasta": return <img id="o-images" src={pasta} alt={tipo} style={style} />;
-                    case "metalica": return <img id="o-images" src={metalica} alt={tipo} style={style} />;
-                    case "acetato": return <img id="o-images" src={acetato} alt={tipo} style={style} />;
-                    case "monofocal": return <img id="o-images" src={monofocal} alt={tipo} style={style} />;
-                    case "bifocal": return <img id="o-images" src={bifocal} alt={tipo} style={style} />;
-                    case "progresivo": return <img id="o-images" src={progresivo} alt={tipo} style={style} />;
+                    case "Ovalado": return <img id="o-images" src={circular} alt={tipo} style={style}/>;
+                    case "Rectangular": return <img id="o-images" src={cuadrado} alt={tipo} style={style}/>;
+                    case "Triangular": return <img id="o-images" src={triangular} alt={tipo} style={style} />;
+                    case "Miopia": return <img id="o-images" src={miopia} alt={tipo} style={style} />;
+                    case "Astigmatismo": return <img id="o-images" src={astigmatismo} alt={tipo} style={style} />;
+                    case "Hipermetropia": return <img id="o-images" src={hipermetropia} alt={tipo} style={style} />;
+                    case "Pasta": return <img id="o-images" src={pasta} alt={tipo} style={style} />;
+                    case "Metalica": return <img id="o-images" src={metalica} alt={tipo} style={style} />;
+                    case "Acetato": return <img id="o-images" src={acetato} alt={tipo} style={style} />;
+                    case "Monofocal": return <img id="o-images" src={monofocal} alt={tipo} style={style} />;
+                    case "Bifocal": return <img id="o-images" src={bifocal} alt={tipo} style={style} />;
+                    case "Progresivo": return <img id="o-images" src={progresivo} alt={tipo} style={style} />;
 
                     default: return <div/>;
                 }

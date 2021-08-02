@@ -1,18 +1,83 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import emailjs from 'emailjs-com';
+import TextField from '@material-ui/core/TextField';
+import PrimarySearchAppBar from '../Components/Navigator.js';
+import { FormControl } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
+import { Select } from '@material-ui/core';
+import { MenuItem } from '@material-ui/core';
+import Snackbar from '@material-ui/core/Snackbar';
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            [theme.breakpoints.up('sm')]: {
+                width: '60%',
+            }
+        },
+    },
+    formControl: {
+        margin: theme.spacing(0),
+        width: '100%',
+
+    },
+    textfield: {
+        padding: '5em 2em 0em 2em',
+        width: '100%',
+
+    },
+    button: {
+        position: 'absolute',
+        margin: '2em 0em 0em 0em',
+        maxWidth: '7em',
+    },
+
+}));
+
+
+
 
 const Date = () => {
-    const frmContact = { userEmail: '', concernCategory: '', emailTitle: '', emailDetails: '' };
+    const classes = useStyles();
+    const frmContact = { userName: '', document: '', number: '', phone: '', date: '' };
     const [contact, setContact] = useState(frmContact);
     const [showMessage, setShowMessage] = useState(false);
     const handleChange = e => {
         const { name, value } = e.target;
         setContact({ ...contact, [name]: value });
     };
+    const handleClose = () => {
+        setState({ ...state, open: false });
+    };
+
+    const validate = (newState) => () => {
+        if (validate) {
+            setState({message: 'Cita Agendada', ...newState });
+        }
+    };
+
+
+    const [state, setState] = React.useState({
+        open: false,
+        validate:false,
+        vertical: 'top',
+        horizontal: 'center',
+        message: 'Cita Agendada',
+    });
+
+    const { vertical, horizontal, open, message } = state;
+
     const handleSubmit = e => {
         e.preventDefault();
         emailjs.send('default_service', 'template_61mxqpm', contact, 'user_1y3e7SWa6ujxgkJcPkxkH')
             .then((response) => {
+                state.open='true';
                 console.log('SUCCESS!', response.status, response.text);
                 setContact(frmContact);
                 setShowMessage(true);
@@ -20,155 +85,95 @@ const Date = () => {
                 console.log('FAILED...', err);
             });
     }
-    return (
-        <div className='container pt-2 text-center'>
-            <div className="alert alert-light" role="alert">
-                <a href="https://tupaginaonline.net/tutorial-para-enviar-correo-con-react-js-hooks-y-emailjs">Tutorial para enviar correo con React.js (Hooks) y emailJS</a>
-            </div>
 
-            {showMessage ? <div className="alert alert-success col-md-5 mx-auto" role="alert">Email Send Success!!</div> : ``}
+
+    return (
+        <div className={classes.root}>
+            <PrimarySearchAppBar />
 
             <form onSubmit={handleSubmit}>
-                <div className="pt-3"><h3 className="font-weight-bold"> Contact Us !! </h3></div>
-                <div className="pt-3 col-md-5 mx-auto">
-                    <div className="form-group text-left"> <b>Your Email</b> <br />
-                        <input required type="text" value={contact.userEmail} name="userEmail" onChange={handleChange} className="form-control" placeholder="Your email" />
+                <div className={classes.textfield}>
+                    <h3> AGENDA TU CITA </h3>
+                    <TextField
+                        id="standard-basic"
+                        label="Nombres"
+                        required
+                        type="text"
+                        value={contact.userName}
+                        name="userName"
+                        onChange={handleChange}
+                        className="form-control" />
+
+                    <FormControl className={classes.formControl}>
+                        <InputLabel id="demo-simple-select-label">Tipo de Documento</InputLabel>
+                        <Select
+                            required
+                            labelId="demo-simple-select-label"
+                            id="document"
+                            name="document"
+                            value={contact.document}
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={'RC'}>Registro Civil</MenuItem>
+                            <MenuItem value={'TI'}>Tarjeta de Identidad</MenuItem>
+                            <MenuItem value={'CC'}>Cedula de Ciudadania</MenuItem>
+                            <MenuItem value={'CE'}>Cedula de Extangeria</MenuItem>
+                            <MenuItem value={'Otro'}>Otro</MenuItem>
+                        </Select>
+                    </FormControl>
+
+                    <TextField
+                        id="standard-basic"
+                        label="Numero de Documento"
+                        required
+                        type="number"
+                        value={contact.number}
+                        name="number"
+                        onChange={handleChange}
+                        className="form-control" />
+
+                    <TextField
+                        id="date"
+                        required
+                        label="Fecha y Hora"
+                        value={contact.date}
+                        name={'date'}
+                        type="datetime-local"
+                        className="form-control"
+                        onChange={handleChange}
+                        InputLabelProps={{
+                            shrink: true
+                        }}
+                    />
+
+                    <TextField
+                        id="standard-basic"
+                        label="celular"
+                        required type="number"
+                        value={contact.phone}
+                        name="phone"
+                        onChange={handleChange}
+                        className="form-control" />
+
+                    <div className="pt-3" >
+                        <button className="btn btn-dark" onClick={validate({ vertical: 'bottom', horizontal: 'left'})}>AGENDAR</button>
                     </div>
-                </div>
-                <div className="pt-3 col-md-5 mx-auto">
-                    <div className="form-group text-left"> <b>Concern Category</b> <br />
-                        <select required className="form-control" value={contact.concernCategory} onChange={handleChange} name="concernCategory">
-                            <option value='' >Select</option>
-                            <option value="info" >Info</option>
-                            <option value="buy">Buy</option>
-                            <option value="play tennis">Play tennis</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
-                <div className="pt-3 col-md-5 mx-auto">
-                    <div className="form-group text-left"> <b>Title</b> <br />
-                        <input value={contact.emailTitle} required type="text" name="emailTitle" onChange={handleChange} className="form-control" placeholder="Your email" />
-                    </div>
-                </div>
-                <div className="pt-3 col-md-5 mx-auto">
-                    <div className="form-group text-left"> <b>Describe your concerns</b> <br />
-                        <textarea required name="emailDetails" onChange={handleChange} className="form-control" placeholder="Describe your concerns" value={contact.emailDetails}></textarea>
-                    </div>
-                </div>
-                <div className="pt-3 col-md-5 mx-auto text-left">
-                    <button className="btn btn-primary">Submit</button>
+                    <Snackbar
+                    
+                        anchorOrigin={{ vertical, horizontal }}
+                        open={open}
+                        onClose={handleClose}
+                        message={message}
+                        key={vertical + horizontal}
+                    />
                 </div>
             </form>
-            <div className="pt-5 font-weight-bold">tupaginaonline.net</div>
         </div>
     );
 }
 export default Date;
 
 
-// import React from 'react';
-// import PrimarySearchAppBar from '../Components/Navigator.js';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-// import FormControl from '@material-ui/core/FormControl';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import Select from '@material-ui/core/Select';
-// import { useFormik } from 'formik';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import Snackbar from '@material-ui/core/Snackbar';
-
-
-
-// // User ID
-// // user_1y3e7SWa6ujxgkJcPkxkH
-// // Access Token
-// // c24d3261e1811ba760d9bc0414b0d530
-// const useStyles = makeStyles((theme) => ({
-
-//     root: {
-//         '& > *': {
-//             margin: theme.spacing(1),
-//             width: '100%',
-//             display: 'flex',
-//             flexDirection: 'column',
-//             ['@media (min-width:960px)']: {
-//                 width: '40%',
-//             }
-//         },
-//     },
-//     formControl: {
-//         margin: theme.spacing(1),
-//         width: '100%',
-//         ['@media (min-width:960px)']: {
-//             width: '40%',
-//         }
-//     },
-//     textfield: {
-//         padding: '5em 2em 0em 2em',
-//         width: '100%',
-//         ['@media (min-width:960px)']: {
-//             width: '100%',
-//         }
-//     },
-//     button: {
-//         position: 'absolute',
-//         margin: '2em 0em 0em 0em',
-//         maxWidth: '7em',
-//     },
-
-// }));
-
-// export default function Us() {
-//     const classes = useStyles();
-//     const formik = useFormik({
-//         initialValues: {
-//             firstName: '',
-//             lastName: '',
-//             doc: '',
-//             document: '',
-//             phone: '',
-//             date: '',
-//         },
-//         onSubmit: values => {
-//             //alert(JSON.stringify(values, null, 2));
-//         },
-
-//     });
-//     const [state, setState] = React.useState({
-//         open: false,
-//         errordoc: '',
-//         errorphone: '',
-//         vertical: 'top',
-//         horizontal: 'center',
-//         message: 'Cita Agendada',
-//     });
-
-//     const { vertical, horizontal, open, message, errordoc, errorphone } = state;
-
-//     const validate = (newState) => () => {
-//         if (!formik.values.firstName
-//             || !formik.values.lastName
-//             || !formik.values.doc
-//             || !formik.values.document
-//             || !formik.values.phone
-//             || !formik.values.date) {
-//             setState({ open: true, message: 'Faltan campos por llenar', ...newState });
-//         } else if (!/^[0-9]{4,12}$/i.test(formik.values.document)) {
-//             setState({ open: true, message: 'Este campo solo acepta números', errordoc: true, ...newState });
-//         } else {
-//             if (!/^[0-9]{7,11}$/i.test(formik.values.phone)) {
-//                 setState({ open: true, message: 'Este campo solo acepta números', errorphone: true, ...newState });
-//             } else {
-//                 setState({ open: true, message: 'Cita Agendada', ...newState });
-//             }
-//         }
-//     };
-
-//     const handleClose = () => {
-//         setState({ ...state, open: false });
-//     };
 
 
 //     return (
@@ -242,14 +247,8 @@ export default Date;
 //                             shrink: true
 //                         }}
 //                     />
-//                     <Button type="submit" variant="outlined" className={classes.button} onClick={validate({ vertical: 'bottom', horizontal: 'left' })} > AGENDAR </Button>
-//                     <Snackbar
-//                         anchorOrigin={{ vertical, horizontal }}
-//                         open={open}
-//                         onClose={handleClose}
-//                         message={message}
-//                         key={vertical + horizontal}
-//                     />
+//                     <Button type="submit" variant="outlined" className={classes.button}  > AGENDAR </Button>
+//                     
 //                 </form>
 //             </div>
 //         </div>

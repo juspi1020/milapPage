@@ -12,7 +12,7 @@ const DescriptionCard = (props) => {
         <div>
             {(() => {
                 switch (tipo) {
-                    case "rectangular":
+                    case "Rectangular":
                         return (
                             <CardContent style={style}>
                                 <Typography>
@@ -21,83 +21,83 @@ const DescriptionCard = (props) => {
                             </CardContent>
                         )
 
-                    case "triangular": return (
+                    case "Triangular": return (
                         <CardContent style={style}>
                             <Typography>
                                 Este rostro presenta una barbilla muy puntiaguda, la distancia entre los pómulos es más grande y la frente sobresaliente.
                         </Typography>
                         </CardContent>
                     )
-                    case "ovalado": return (
+                    case "Ovalado": return (
                         <CardContent style={style}>
                             <Typography>
                                 Su principal característica es estar más alto que ancho pero de manera proporcionada, por esta razón, se le conoce como el rostro de proporción perfecta o ideal.
                             </Typography>
                         </CardContent>
                     )
-                    case "miopia": return (
+                    case "Miopia": return (
                         <CardContent style={style}>
                             <Typography>
                                 El principal síntoma de la miopía es que el paciente ve claramente los objetos cercanos, pero percibe de forma borrosa y le cuesta enfocar los objetos que se encuentran a una cierta distancia.
                         </Typography>
                         </CardContent>
                     )
-                    case "hipermetropia": return (
+                    case "Hipermetropia": return (
                         <CardContent style={style}>
                             <Typography>
                                 La hipermetropía es un defecto ocular que provoca la falta de nitidez o visión borrosa de los objetos próximos como consecuencia de enfocar las imágenes por detrás de la retina y no directamente sobre ella.
                         </Typography>
                         </CardContent>
                     )
-                    case "astigmatismo": return (
+                    case "Astigmatismo": return (
                         <CardContent style={style}>
                             <Typography>
                                 Es una imperfección frecuente y generalmente tratable en la curvatura del ojo que provoca visión lejana y cercana borrosas.                        </Typography>
                         </CardContent>
                     )
-                    case "presbicia": return (
+                    case "Presbicia": return (
                         <CardContent style={style}>
                             <Typography>
                                 La presbicia es la pérdida gradual de la capacidad de los ojos para enfocar objetos cercanos. Es una parte natural y a veces molesta del envejecimiento. Por lo general, la presbicia empieza a notarse entre los 40 y 45 años y continúa empeorando hasta alrededor de los 65 años.
                         </Typography>
                         </CardContent>
                     )
-                    case "pasta": return (
+                    case "Pasta": return (
                         <CardContent style={style}>
                             <Typography>
                                 Material poco pesado, sumergible en agua 
                         </Typography>
                         </CardContent>
                     )
-                    case "metalica": return (
+                    case "Metalica": return (
                         <CardContent style={style}>
                             <Typography>
                                 Set aside off of the heat to let rest for 10 minutes, and then serve.
                         </Typography>
                         </CardContent>
                     )
-                    case "acetato": return (
+                    case "Acetato": return (
                         <CardContent style={style}>
                             <Typography>
                                 Set aside off of the heat to let rest for 10 minutes, and then serve.
                         </Typography>
                         </CardContent>
                     )
-                    case "monofocal": return (
+                    case "Monofocal": return (
                         <CardContent style={style}>
                             <Typography>
                                 Este tipo de lente solo tiene un tipo de vision dependiendo de la formula del paciente
                         </Typography>
                         </CardContent>
                     )
-                    case "bifocal": return (
+                    case "Bifocal": return (
                         <CardContent style={style}>
                             <Typography>
                                 Este tipo de lente tiene vision lejana por la parte superior y cercana por la parte baja del lente
                         </Typography>
                         </CardContent>
                     )
-                    case "progresivo": return (
+                    case "Progresivo": return (
                         <CardContent style={style}>
                             <Typography>
                                 Este tipo de lente tiene vision lejana por la parte superior, vision media por la parte media del lente y cercana por la parte baja
