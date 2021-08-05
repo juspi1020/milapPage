@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
             display: 'flex',
             flexDirection: 'column',
             [theme.breakpoints.up('sm')]: {
-                width: '60%',
+                width: '40%',
             }
         },
     },
@@ -58,14 +58,14 @@ const Date = () => {
 
     const validate = (newState) => () => {
         if (validate) {
-            setState({message: 'Cita Agendada', ...newState });
+            setState({ message: 'Cita Agendada', ...newState });
         }
     };
 
 
     const [state, setState] = React.useState({
         open: false,
-        validate:false,
+        validate: false,
         vertical: 'top',
         horizontal: 'center',
         message: 'Cita Agendada',
@@ -77,7 +77,7 @@ const Date = () => {
         e.preventDefault();
         emailjs.send('default_service', 'template_61mxqpm', contact, 'user_1y3e7SWa6ujxgkJcPkxkH')
             .then((response) => {
-                state.open='true';
+                state.open = 'true';
                 console.log('SUCCESS!', response.status, response.text);
                 setContact(frmContact);
                 setShowMessage(true);
@@ -135,9 +135,9 @@ const Date = () => {
                     <TextField
                         id="date"
                         required
-                        label="Fecha y Hora"
                         value={contact.date}
-                        name={'date'}
+                        label="Fecha y Hora"
+                        name="date"
                         type="datetime-local"
                         className="form-control"
                         onChange={handleChange}
@@ -156,10 +156,10 @@ const Date = () => {
                         className="form-control" />
 
                     <div className="pt-3" >
-                        <button className="btn btn-dark" onClick={validate({ vertical: 'bottom', horizontal: 'left'})}>AGENDAR</button>
+                        <button className="btn btn-dark" onClick={validate({ vertical: 'bottom', horizontal: 'left' })}>AGENDAR</button>
                     </div>
                     <Snackbar
-                    
+
                         anchorOrigin={{ vertical, horizontal }}
                         open={open}
                         onClose={handleClose}
