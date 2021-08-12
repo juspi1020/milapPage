@@ -57,7 +57,7 @@ export default function PrimarySearchAppBar() {
     const handleClickHome = () => history.push('/');
     const handleClickUs = () => history.push('/nosotros');
     const handleClickDate = () => history.push('/cita');
-    const handleClickGlasses = () => history.push('/prueba');
+    //const handleClickGlasses = () => history.push('/prueba');
     const handleClickLenses = () => history.push('/lentes');
 
     const mobileMenuId = 'primary-search-account-menu-mobile';

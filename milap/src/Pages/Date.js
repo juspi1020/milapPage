@@ -47,11 +47,12 @@ const Date = () => {
     const classes = useStyles();
     const frmContact = { userName: '', document: '', number: '', phone: '', date: '' };
     const [contact, setContact] = useState(frmContact);
-    const [showMessage, setShowMessage] = useState(false);
+
     const handleChange = e => {
         const { name, value } = e.target;
         setContact({ ...contact, [name]: value });
     };
+
     const handleClose = () => {
         setState({ ...state, open: false });
     };
@@ -80,7 +81,6 @@ const Date = () => {
                 state.open = 'true';
                 console.log('SUCCESS!', response.status, response.text);
                 setContact(frmContact);
-                setShowMessage(true);
             }, (err) => {
                 console.log('FAILED...', err);
             });

@@ -72,14 +72,14 @@ const DescriptionCard = (props) => {
                     case "Metalica": return (
                         <CardContent style={style}>
                             <Typography>
-                                Set aside off of the heat to let rest for 10 minutes, and then serve.
+                                Material delicado, muy bueno para trabajos en oficina
                         </Typography>
                         </CardContent>
                     )
                     case "Acetato": return (
                         <CardContent style={style}>
                             <Typography>
-                                Set aside off of the heat to let rest for 10 minutes, and then serve.
+                                Material poco pesado, liviano, resistente al impacto
                         </Typography>
                         </CardContent>
                     )

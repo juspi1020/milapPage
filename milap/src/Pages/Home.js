@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1em',
         alignSelf: 'center',
         padding: '0% 0% 0% 10%',
-        ['@media (min-width:960px)']: {
+        [theme.breakpoints.up('md')]: {
             fontSize: '3em',
             padding: '25% 0% 0% 45%',
         }
