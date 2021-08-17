@@ -27,7 +27,7 @@ const prices = [
         fotocromatico: '',
         monofocal: 'si',
         bifocal: '',
-        progresivo:'',
+        progresivo: '',
         precio: 120000
     },
     {
@@ -89,7 +89,8 @@ const prices = [
         bifocal: '',
         progresivo: '',
         precio: 620000
-    },  {
+    },
+    {
         id: 10,
         nombre: 'Policarbonato Transition Con Ar Clarity',
         ar: 'si',
@@ -99,6 +100,116 @@ const prices = [
         progresivo: '',
         precio: 480000
     },
+    {
+        id: 11,
+        nombre: 'Policarbonato Ar',
+        ar: 'si',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 90000
+    },
+    {
+        id: 12,
+        nombre: 'Futurex Steel',
+        ar: 'si',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 120000
+    },
+    {
+        id: 13,
+        nombre: 'Futurex G3 Blue Protect Steel',
+        ar: 'si',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 310000
+    },
+    {
+        id: 14,
+        nombre: 'AirWear Crizal Sapphire',
+        ar: 'si',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 320000
+    },
+    {
+        id: 15,
+        nombre: 'FlatTop Cr-39',
+        ar: '',
+        fotocromatico: '',
+        monofocal: '',
+        bifocal: 'si',
+        progresivo: '',
+        precio: 90000
+    },
+    {
+        id: 16,
+        nombre: 'Invisible Cr-39',
+        ar: '',
+        fotocromatico: '',
+        monofocal: '',
+        bifocal: 'si',
+        progresivo: '',
+        precio: 90000
+    },
+    {
+        id: 17,
+        nombre: 'FlatTop Policarbonato',
+        ar: '',
+        fotocromatico: '',
+        monofocal: '',
+        bifocal: 'si',
+        progresivo: '',
+        precio: 170000
+    },
+    {
+        id: 18,
+        nombre: 'Invisible Policarbonato',
+        ar: '',
+        fotocromatico: '',
+        monofocal: '',
+        bifocal: 'si',
+        progresivo: '',
+        precio: 230000
+    },
+    {
+        id: 19,
+        nombre: 'Trivex',
+        ar: '',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 190000
+    },
+    {
+        id: 20,
+        nombre: 'Thin & Lite',
+        ar: '',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 420000
+    },
+    {
+        id: 21,
+        nombre: 'Alto Indice 1.74 Con Ar clarity',
+        ar: 'si',
+        fotocromatico: '',
+        monofocal: 'si',
+        bifocal: '',
+        progresivo: '',
+        precio: 600000
+    }
 
 ]
 export default prices;
