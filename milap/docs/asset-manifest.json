@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.94eb1049.chunk.css",
+    "main.js": "/static/js/main.d2931c42.chunk.js",
+    "main.js.map": "/static/js/main.d2931c42.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.75a168f5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.75a168f5.js.map",
+    "static/css/2.b6780a9c.chunk.css": "/static/css/2.b6780a9c.chunk.css",
+    "static/js/2.45fa4dc3.chunk.js": "/static/js/2.45fa4dc3.chunk.js",
+    "static/js/2.45fa4dc3.chunk.js.map": "/static/js/2.45fa4dc3.chunk.js.map",
+    "static/js/3.d8c8ec05.chunk.js": "/static/js/3.d8c8ec05.chunk.js",
+    "static/js/3.d8c8ec05.chunk.js.map": "/static/js/3.d8c8ec05.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.b6780a9c.chunk.css.map": "/static/css/2.b6780a9c.chunk.css.map",
+    "static/css/main.94eb1049.chunk.css.map": "/static/css/main.94eb1049.chunk.css.map",
+    "static/js/2.45fa4dc3.chunk.js.LICENSE.txt": "/static/js/2.45fa4dc3.chunk.js.LICENSE.txt",
+    "static/media/acetato.86ae54d2.svg": "/static/media/acetato.86ae54d2.svg",
+    "static/media/astigmatismo.afe7fc1a.svg": "/static/media/astigmatismo.afe7fc1a.svg",
+    "static/media/bifocal.c6287b6a.svg": "/static/media/bifocal.c6287b6a.svg",
+    "static/media/hipermetropia.559cc2c5.svg": "/static/media/hipermetropia.559cc2c5.svg",
+    "static/media/metalica.681305f5.svg": "/static/media/metalica.681305f5.svg",
+    "static/media/miopia.86b5e8ca.svg": "/static/media/miopia.86b5e8ca.svg",
+    "static/media/monofocal.59ed5ad8.svg": "/static/media/monofocal.59ed5ad8.svg",
+    "static/media/ovalado.f21676be.svg": "/static/media/ovalado.f21676be.svg",
+    "static/media/pasta.c9e7a158.svg": "/static/media/pasta.c9e7a158.svg",
+    "static/media/progresivo.8c2edfcb.svg": "/static/media/progresivo.8c2edfcb.svg",
+    "static/media/rectangular.52c06601.svg": "/static/media/rectangular.52c06601.svg",
+    "static/media/index.css": "/static/media/roboto-vietnamese-400-normal.52cebac0.woff2",
+    "static/media/triangular.19b3ee24.svg": "/static/media/triangular.19b3ee24.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75a168f5.js",
+    "static/css/2.b6780a9c.chunk.css",
+    "static/js/2.45fa4dc3.chunk.js",
+    "static/css/main.94eb1049.chunk.css",
+    "static/js/main.d2931c42.chunk.js"
+  ]
+}

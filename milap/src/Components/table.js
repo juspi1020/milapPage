@@ -55,7 +55,7 @@ export default function DataTable() {
             <DataGrid
                 rows={rows}
                 columns={columns}
-                pageSize={10}
+                pageSize={20}
                 disableSelectionOnClick
             />
         </div>
