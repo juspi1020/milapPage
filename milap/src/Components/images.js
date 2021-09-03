@@ -1,10 +1,12 @@
 import React from 'react';
+
 import circular from '../Images/ovalado.svg';
 import cuadrado from '../Images/rectangular.svg';
 import triangular from '../Images/triangular.svg';
 import miopia from '../Images/miopia.svg';
 import astigmatismo from '../Images/astigmatismo.svg';
 import hipermetropia from '../Images/hipermetropia.svg';
+import presbicia from '../Images/presbicia.svg';
 import pasta from '../Images/pasta.svg';
 import metalica from '../Images/metalica.svg';
 import acetato from '../Images/acetato.svg';
@@ -29,6 +31,7 @@ const Images  = (props) => {
                     case "Miopia": return <img id="o-images" src={miopia} alt={tipo} style={style} />;
                     case "Astigmatismo": return <img id="o-images" src={astigmatismo} alt={tipo} style={style} />;
                     case "Hipermetropia": return <img id="o-images" src={hipermetropia} alt={tipo} style={style} />;
+                    case "Presbicia": return <img id="o-images" src={presbicia} alt={tipo} style={style} />;
                     case "Pasta": return <img id="o-images" src={pasta} alt={tipo} style={style} />;
                     case "Metalica": return <img id="o-images" src={metalica} alt={tipo} style={style} />;
                     case "Acetato": return <img id="o-images" src={acetato} alt={tipo} style={style} />;
